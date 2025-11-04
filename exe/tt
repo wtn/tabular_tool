@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../lib/tabular_tool"
+
+# Handle interrupts more aggressively
+# Polars (Rust extension) can block and not check for Ruby interrupts
+interrupted = false
+trap("INT") do
+  if interrupted
+    # Second Ctrl+C - force exit immediately
+    warn "\nForce quit."
+    exit! 130
+  else
+    interrupted = true
+    warn "\nInterrupting... (press Ctrl+C again to force quit)"
+    # Raise interrupt in main thread
+    Thread.main.raise(Interrupt)
+  end
+end
+
+begin
+  args = TabularTool::CLI.parse_args(ARGV)
+  result = TabularTool::CLI.execute(**args)
+  puts result if result
+rescue Interrupt
+  # Ctrl+C pressed
+  warn "\nInterrupted." unless interrupted
+  exit 130
+rescue SystemExit
+  # Explicit exit call or TERM signal - let it propagate
+  raise
+rescue TabularTool::Error => e
+  warn "Error: #{e.message}"
+  exit 1
+rescue Polars::Error => e
+  warn "Error: #{e.message}"
+  warn e.backtrace.join("\n") if ENV["DEBUG"]
+  exit 1
+rescue Errno::EPIPE
+  # Broken pipe (e.g., piping to head) - exit quietly
+  exit 0
+rescue => e
+  warn "Unexpected error (#{e.class}): #{e.message}"
+  warn e.backtrace.join("\n") if ENV["DEBUG"]
+  exit 1
+end

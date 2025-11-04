@@ -1,0 +1,11 @@
+name,age,city,score,status
+Alice,30,New York,85.5,active
+Bob,25,Los Angeles,92.0,active
+Charlie,35,Chicago,78.5,inactive
+Diana,28,Houston,88.0,active
+Eve,32,Phoenix,91.5,active
+Frank,27,Philadelphia,76.0,inactive
+Grace,29,San Antonio,89.5,active
+Henry,31,San Diego,82.0,active
+Ivy,26,Dallas,94.5,active
+Jack,33,San Jose,80.0,inactive
