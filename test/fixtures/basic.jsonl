@@ -1,0 +1,10 @@
+{"name": "Alice", "age": 30, "city": "New York", "score": 85.5, "status": "active"}
+{"name": "Bob", "age": 25, "city": "Los Angeles", "score": 92.0, "status": "active"}
+{"name": "Charlie", "age": 35, "city": "Chicago", "score": 78.5, "status": "inactive"}
+{"name": "Diana", "age": 28, "city": "Houston", "score": 88.0, "status": "active"}
+{"name": "Eve", "age": 32, "city": "Phoenix", "score": 91.5, "status": "active"}
+{"name": "Frank", "age": 27, "city": "Philadelphia", "score": 76.0, "status": "inactive"}
+{"name": "Grace", "age": 29, "city": "San Antonio", "score": 89.5, "status": "active"}
+{"name": "Henry", "age": 31, "city": "San Diego", "score": 82.0, "status": "active"}
+{"name": "Ivy", "age": 26, "city": "Dallas", "score": 94.5, "status": "active"}
+{"name": "Jack", "age": 33, "city": "San Jose", "score": 80.0, "status": "inactive"}
