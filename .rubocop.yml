@@ -1,0 +1,17 @@
+AllCops:
+  DisabledByDefault: true
+  NewCops: disable
+  TargetRubyVersion: 3.0
+  SuggestExtensions: false
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
