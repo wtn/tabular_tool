@@ -1,0 +1,16 @@
+[package]
+name = "tabular_tool"
+version = "0.0.0"
+edition = "2024"
+
+[[bin]]
+name = "tt"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+polars = { version = "0.52", features = ["lazy", "csv", "parquet", "json", "decompress", "dtype-full", "sql", "new_streaming"] }
+polars-utils = "0.52"
+anyhow = "1.0"
+atty = "0.2"
+rand = "0.8"
