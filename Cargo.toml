@@ -1,0 +1,17 @@
+[package]
+name = "tabular_tool"
+version = "0.0.0"
+edition = "2024"
+
+[[bin]]
+name = "tt"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.6", features = ["derive"] }
+polars = { version = "0.53", features = ["lazy", "csv", "parquet", "json", "decompress", "dtype-full", "sql", "new_streaming", "random"] }
+anyhow = "1.0"
+rand = "0.10"
+
+[dev-dependencies]
+flate2 = "1.1"
